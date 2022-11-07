@@ -2,7 +2,7 @@
   "name": "alan-deployment",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alanmacias5.github.io/alan-deployment/",
+  "homepage": "https://ephemeral-pony-ea6d38.netlify.app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -26,7 +26,7 @@
     "netlify": "netlify",
     "eject": "react-scripts eject",
     "prepare": "husky install",
-    "setHomepage": "node script/update_homepage.js"
+    "setHomepage": "node scripts/update_homepage.js"
   },
   "eslintConfig": {
     "extends": [
