@@ -5,7 +5,7 @@ on:
     branches:
       - develop/*
 
-      workflow_dispatch:
+  workflow_dispatch:
 
 env:
   CI: false
@@ -21,8 +21,6 @@ concurrency:
 
 jobs:
   test-code:
-    environment:
-      name: QA
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -40,9 +38,9 @@ jobs:
         run: npm run test
 
   QA-deploy:
-      needs: test-code
-      environment:
-        name: QA
+    needs: test-code
+    environment:
+      name: QA
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
