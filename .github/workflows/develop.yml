@@ -6,6 +6,8 @@ on:
       - develop/*
 jobs:
   test-code:
+    environment:
+      name: QA
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,7 +19,7 @@ jobs:
       - name: build
         run: CI=false npm run build
       - name: deploy
-        run: netlify deploy --prod --auth {{secrets.ALANAUTHTOKEN}} --site {{secrets.SITEIDPUFFPUFF}}
+        run: netlify deploy --prod --auth {{ secrets.ALANAUTHTOKEN }} --site {{ secrets.SITEIDPUFFPUFF }}
       - name: Test Lint
         run: npm run lint
       - name: Test coverage
