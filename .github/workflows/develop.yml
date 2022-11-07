@@ -15,7 +15,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: build
-        run: CI = false npm run build 
+        run: CI=false npm run build 
       - name: deploy
         run: npm deploy -p --auth {{secrets.ALANAUTHTOKEN}} --site {{secrets.SITEIDPUFFPUFF}}
       - name: Test Lint
