@@ -14,13 +14,18 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "16"
+
       - name: Install Dependencies
         run: npm install
+
       - name: build
         run: CI=false npm run build
+
       - name: deploy
-        run: netlify deploy -p --auth {{ secrets.ALANAUTHTOKEN }} --site {{ secrets.SITEIDPUFFPUFF }}
+        run: netlify deploy -p --auth ${{ secrets.ALANAUTHTOKEN }} --site ${{ secrets.SITEIDPUFFPUFF }}
+
       - name: Test Lint
         run: npm run lint
+
       - name: Test coverage
         run: npm run test
